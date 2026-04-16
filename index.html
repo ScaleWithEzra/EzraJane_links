@@ -1,15 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ezra 🌱</title>
-  <meta name="description" content="Web designer, developer, and writer."/>
+  <meta name="description" content="Helping humans make technology work for them."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -20,353 +18,177 @@
       padding: 48px 20px 80px;
       -webkit-font-smoothing: antialiased;
     }
-
-    .page {
-      max-width: 480px;
-      margin: 0 auto;
-    }
+    .page { max-width: 480px; margin: 0 auto; }
 
     /* ── Profile ── */
-    .profile {
-      text-align: center;
-      margin-bottom: 36px;
-    }
+    .profile { text-align: center; margin-bottom: 36px; }
     .avatar-wrap {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      margin: 0 auto 16px;
-      overflow: hidden;
-      border: 3px solid #ECEAE5;
-      background: #1D60D4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 88px; height: 88px; border-radius: 50%;
+      margin: 0 auto 16px; overflow: hidden;
+      border: 3px solid #ECEAE5; background: #E91E8C;
+      display: flex; align-items: center; justify-content: center;
     }
-    .avatar-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .avatar-initials {
-      font-size: 28px;
-      font-weight: 800;
-      color: #fff;
-    }
-    .profile-name {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-    }
-    .profile-bio {
-      font-size: 14px;
-      color: rgba(15,15,15,0.55);
-      line-height: 1.5;
-    }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .avatar-initials { font-size: 28px; font-weight: 800; color: #fff; }
+    .profile-name { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .profile-tagline { font-size: 13px; font-weight: 600; color: #1D60D4; margin-bottom: 5px; }
+    .profile-bio { font-size: 12px; color: rgba(15,15,15,0.4); }
 
     /* ── Section label ── */
     .section-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(15,15,15,0.35);
-      margin-bottom: 12px;
-      margin-top: 32px;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(15,15,15,0.35);
+      margin-bottom: 12px; margin-top: 32px;
     }
 
     /* ── Link cards ── */
     .links { display: flex; flex-direction: column; gap: 10px; }
     .link-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #fff;
-      border: 1px solid #ECEAE5;
-      border-radius: 14px;
-      padding: 14px 18px;
-      text-decoration: none;
-      color: #0F0F0F;
-      font-weight: 600;
-      font-size: 15px;
+      display: flex; align-items: center; gap: 14px;
+      background: #fff; border: 1px solid #ECEAE5;
+      border-radius: 14px; padding: 14px 18px;
+      text-decoration: none; color: #0F0F0F;
       transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
-      cursor: pointer;
     }
-    .link-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      border-color: #1D60D4;
-    }
+    .link-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-color: #E91E8C; }
     .link-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: #F4F2ED;
+      width: 38px; height: 38px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; background: #F4F2ED;
     }
-    .link-icon img {
-      width: 20px;
-      height: 20px;
-      display: block;
-    }
+    .link-icon svg { width: 20px; height: 20px; display: block; }
     .link-text { flex: 1; }
     .link-title { font-size: 14px; font-weight: 700; }
     .link-sub { font-size: 12px; color: rgba(15,15,15,0.45); margin-top: 1px; }
-    .link-arrow {
-      font-size: 16px;
-      color: rgba(15,15,15,0.25);
-    }
+    .link-arrow { font-size: 16px; color: rgba(15,15,15,0.25); }
 
-    /* ── Offer section ── */
-    .offer-section {
-      margin-top: 40px;
+    /* ── CTA ── */
+    .cta-section {
+      margin-top: 40px; background: #0F0F0F;
+      border-radius: 20px; padding: 32px 28px 28px; color: #EDEDEA;
     }
-    .offer-header {
-      text-align: center;
-      margin-bottom: 20px;
+    .cta-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #E91E8C; margin-bottom: 12px;
     }
-    .offer-header h2 {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
+    .cta-headline { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 10px; }
+    .cta-body { font-size: 14px; color: rgba(237,237,234,0.55); line-height: 1.6; margin-bottom: 24px; }
+    .cta-btn {
+      display: inline-block; background: #E91E8C; color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 100px; text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
     }
-    .offer-header p {
-      font-size: 13px;
-      color: rgba(15,15,15,0.5);
-      line-height: 1.5;
-    }
-    .offer-cards { display: flex; flex-direction: column; gap: 12px; }
-    .offer-card {
-      display: block;
-      background: #fff;
-      border: 1.5px solid #ECEAE5;
-      border-radius: 16px;
-      padding: 20px 20px 18px;
-      text-decoration: none;
-      color: #0F0F0F;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .offer-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
-    }
-    .offer-card.featured {
-      border-color: #1D60D4;
-      background: #0F0F0F;
-      color: #EDEDEA;
-    }
-    .offer-tag {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #1D60D4;
-      margin-bottom: 8px;
-    }
-    .offer-card.featured .offer-tag { color: #5BADFF; }
-    .offer-name {
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-      margin-bottom: 4px;
-    }
-    .offer-desc {
-      font-size: 13px;
-      color: rgba(15,15,15,0.5);
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-    .offer-card.featured .offer-desc { color: rgba(237,237,234,0.5); }
-    .offer-price {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-    .offer-price span {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(15,15,15,0.4);
-      letter-spacing: 0;
-    }
-    .offer-card.featured .offer-price span { color: rgba(237,237,234,0.4); }
-    .offer-cta {
-      display: inline-block;
-      margin-top: 14px;
-      background: #1D60D4;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 9px 18px;
-      border-radius: 100px;
-    }
-    .offer-card.featured .offer-cta {
-      background: #5BADFF;
-      color: #04111f;
-    }
+    .cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 
     /* ── Footer ── */
-    .footer {
-      text-align: center;
-      margin-top: 48px;
-      font-size: 11px;
-      color: rgba(15,15,15,0.3);
-    }
+    .footer { text-align: center; margin-top: 32px; font-size: 11px; color: rgba(15,15,15,0.3); }
     .footer a { color: rgba(15,15,15,0.3); text-decoration: none; }
-    .footer a:hover { color: #1D60D4; }
+    .footer a:hover { color: #E91E8C; }
   </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- ── PROFILE ── -->
+  <!-- PROFILE -->
   <div class="profile">
     <div class="avatar-wrap">
-      <!--
-        TO UPDATE PHOTO:
-        1. Upload your headshot to your GitHub repo (e.g. /assets/ezra.jpg)
-        2. Replace the line below with: <img src="./assets/ezra.jpg" alt="Ezra"/>
-        For now, shows your initials.
-      -->
-      <span class="avatar-initials">E</span>
+      <img src="./IMG_3502%203.png" alt="Ezra" onerror="this.style.display='none';this.parentNode.innerHTML='<span class=\'avatar-initials\'>E</span>'"/>
     </div>
     <div class="profile-name">Ezra 🌱</div>
-    <div class="profile-bio">
-      <!--
-        BIO OPTIONS — pick one and delete the rest:
-        "web designer · developer · writer"
-        "I build websites and write about design."
-        "making the internet work for small businesses"
-        "designer. developer. overthinker."
-        "I build things on the internet — websites, words, and whatever's next."
-      -->
-      web designer · developer · writer
-    </div>
+    <div class="profile-tagline">making tech work for humans, not the other way around</div>
+    <div class="profile-bio">woman-owned · queer · human-first tech</div>
   </div>
 
-  <!-- ── LINKS ──
-    TO EDIT: Change the href, emoji, title, and subtitle for any card below.
-    Add a new card by copying one <a class="link-card"> block.
-  -->
+  <!-- LINKS — edit href, title, sub to update. Copy a block to add a new link. -->
   <p class="section-label">Find me</p>
-  <div class="links" id="links">
+  <div class="links">
 
     <a class="link-card" href="https://www.threads.net/@literally.ez" target="_blank" rel="noopener">
       <div class="link-icon">
-        <img src="https://cdn.simpleicons.org/threads/0F0F0F" alt="Threads"/>
+        <svg viewBox="0 0 192 192" fill="#0F0F0F" xmlns="http://www.w3.org/2000/svg">
+          <path d="M141.537 88.988c-.827-.394-1.667-.776-2.518-1.143-1.482-27.302-16.403-42.935-41.457-43.095h-.316c-14.986 0-27.449 6.397-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.347-10.548h.233c8.25.053 14.474 2.451 18.503 7.128 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.625-23.68-1.14-23.82 1.372-39.134 15.265-38.105 34.569.521 9.792 5.399 18.216 13.734 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.118 5.178-6.609 8.453-15.162 9.899-25.939 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.171 40.526 7.522 52.17 21.848 5.711 7.026 10.016 15.861 12.854 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.07 0h-.113C68.882.194 47.292 9.642 32.788 28.028 19.882 44.486 13.224 67.316 13.001 95.933L13 96l.001.068c.223 28.616 6.882 51.446 19.787 67.904 14.504 18.386 36.093 27.834 64.169 28.028h.112c25.062-.173 42.656-6.708 57.15-21.189 18.963-18.945 18.392-42.692 12.142-57.27-4.484-10.454-13.033-19.045-24.823-24.553zM98.44 129.507c-10.44.588-21.286-4.098-21.821-14.135-.394-7.442 5.298-15.746 22.464-16.735 1.966-.113 3.895-.168 5.787-.168 6.328 0 12.253.606 17.659 1.76-2.012 23.785-13.591 28.718-24.089 29.278z"/>
+        </svg>
       </div>
-      <div class="link-text">
-        <div class="link-title">Threads</div>
-        <div class="link-sub">@literally.ez</div>
-      </div>
+      <div class="link-text"><div class="link-title">Threads</div><div class="link-sub">@literally.ez</div></div>
       <span class="link-arrow">›</span>
     </a>
 
     <a class="link-card" href="https://www.instagram.com/literally.ez" target="_blank" rel="noopener">
       <div class="link-icon">
-        <img src="https://cdn.simpleicons.org/instagram/0F0F0F" alt="Instagram"/>
+        <svg viewBox="0 0 24 24" fill="#0F0F0F" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
       </div>
-      <div class="link-text">
-        <div class="link-title">Instagram</div>
-        <div class="link-sub">@literally.ez</div>
-      </div>
+      <div class="link-text"><div class="link-title">Instagram</div><div class="link-sub">@literally.ez</div></div>
       <span class="link-arrow">›</span>
     </a>
 
     <a class="link-card" href="https://substack.com/@designthedifference" target="_blank" rel="noopener">
-      <!-- VERIFY URL — may be https://designthedifference.substack.com -->
+      <!-- VERIFY: may be https://designthedifference.substack.com -->
       <div class="link-icon">
-        <img src="https://cdn.simpleicons.org/substack/0F0F0F" alt="Substack"/>
+        <svg viewBox="0 0 24 24" fill="#0F0F0F" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+        </svg>
       </div>
-      <div class="link-text">
-        <div class="link-title">Design the Difference</div>
-        <div class="link-sub">Substack · design & tech writing</div>
-      </div>
+      <div class="link-text"><div class="link-title">Design the Difference</div><div class="link-sub">Substack · design & tech writing</div></div>
       <span class="link-arrow">›</span>
     </a>
 
     <a class="link-card" href="https://medium.com/design-the-difference" target="_blank" rel="noopener">
       <div class="link-icon">
-        <img src="https://cdn.simpleicons.org/medium/0F0F0F" alt="Medium"/>
+        <svg viewBox="0 0 24 24" fill="#0F0F0F" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+        </svg>
       </div>
-      <div class="link-text">
-        <div class="link-title">Medium</div>
-        <div class="link-sub">Design the Difference</div>
-      </div>
+      <div class="link-text"><div class="link-title">Medium</div><div class="link-sub">Design the Difference</div></div>
       <span class="link-arrow">›</span>
     </a>
 
     <a class="link-card" href="https://ezraseal.dev" target="_blank" rel="noopener">
       <div class="link-icon">
-        <!-- Globe icon for personal portfolio -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F0F0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0F0F0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
       </div>
-      <div class="link-text">
-        <div class="link-title">Portfolio</div>
-        <div class="link-sub">ezraseal.dev</div>
-      </div>
+      <div class="link-text"><div class="link-title">Portfolio</div><div class="link-sub">ezraseal.dev</div></div>
       <span class="link-arrow">›</span>
     </a>
 
     <a class="link-card" href="https://github.com/ScalewithEzra" target="_blank" rel="noopener">
       <div class="link-icon">
-        <img src="https://cdn.simpleicons.org/github/0F0F0F" alt="GitHub"/>
+        <svg viewBox="0 0 24 24" fill="#0F0F0F" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
       </div>
-      <div class="link-text">
-        <div class="link-title">GitHub</div>
-        <div class="link-sub">ScalewithEzra</div>
-      </div>
+      <div class="link-text"><div class="link-title">GitHub</div><div class="link-sub">ScalewithEzra</div></div>
       <span class="link-arrow">›</span>
     </a>
 
     <a class="link-card" href="https://linkedin.com/in/ezzzcreative" target="_blank" rel="noopener">
       <div class="link-icon">
-        <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn"/>
+        <svg viewBox="0 0 24 24" fill="#0F0F0F" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
       </div>
-      <div class="link-text">
-        <div class="link-title">LinkedIn</div>
-        <div class="link-sub">ezzzcreative</div>
-      </div>
+      <div class="link-text"><div class="link-title">LinkedIn</div><div class="link-sub">ezzzcreative</div></div>
       <span class="link-arrow">›</span>
     </a>
 
   </div>
 
-  <!-- ── OFFER ── -->
-  <div class="offer-section">
-    <div class="offer-header">
-      <h2>Need a website?</h2>
-      <p>I build and maintain sites for small businesses — starting at $100/month. No upfront cost.</p>
-    </div>
-    <div class="offer-cards">
-
-      <a class="offer-card" href="https://ezzzcreative.com" target="_blank" rel="noopener">
-        <div class="offer-tag">Starter</div>
-        <div class="offer-name">Website + monthly support</div>
-        <div class="offer-desc">Site built free. Unlimited small updates, hosting included, live within one week.</div>
-        <div class="offer-price">$100 <span>/ month</span></div>
-        <span class="offer-cta">Learn more →</span>
-      </a>
-
-      <a class="offer-card featured" href="https://ezzzcreative.com" target="_blank" rel="noopener">
-        <div class="offer-tag">Growth</div>
-        <div class="offer-name">Website + strategy + consulting</div>
-        <div class="offer-desc">Everything in Starter plus monthly check-ins, SEO, and 3 hours of consulting.</div>
-        <div class="offer-price">$300 <span>/ month</span></div>
-        <span class="offer-cta">Learn more →</span>
-      </a>
-
-    </div>
+  <!-- CTA — edit headline, body, and href below to update -->
+  <div class="cta-section">
+    <div class="cta-eyebrow">Work with me</div>
+    <div class="cta-headline">You're good at what you do.<br>Let me handle the digital side.</div>
+    <div class="cta-body">Whether you need a website, a strategy, or just don't know where to start — tell me what you're working on and I'll point you in the right direction.</div>
+    <a class="cta-btn" href="https://tally.so/r/rjdxP5" target="_blank" rel="noopener">Tell me what you need →</a>
   </div>
 
-  <!-- ── FOOTER ── -->
   <div class="footer">
-    <a href="https://ezzzcreative.com">built with ezzzcreative 🌱</a>
+    <a href="https://ezzzcreative.com">ezzzcreative 🌱</a> · a portion of every project goes to carbon removal
   </div>
 
 </div>
